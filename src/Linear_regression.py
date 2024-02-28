@@ -24,8 +24,9 @@ def plot_line (a, b, x, y):
 def testLinearRegression():
     try:
 		# data need to be reshaped to 2D array, because sklearn LinearRegression model expects 2D array for x
-        x = np.array([1, 2, 3, 4, 5]).reshape(-1, 1)
-        y = np.array([2, 3, 5, 7, 11])
+        
+        x = np.array([1, 2, 3, 4, 7, 9, 5]).reshape(-1, 1)
+        y = np.array([2, 3, 5, 7, 7, 99, 11])
 
         a, b = comput_cofficient(x, y)
         print("a: ", a, "b: ", b)
