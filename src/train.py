@@ -35,9 +35,11 @@ def main () :
 	for i in range(1000) :
 		estm = theta0 + (theta1 * x)
 		
+		# learning rate is the step size, the bigger it is, determines the step size at each iteration while moving towards a minimum of the loss function
 		tempTheta0 = learning_rate * (sum(estm - y) / Decimal(len(x)))
 		tempTheta1 = learning_rate * (sum((estm - y) * x) / Decimal(len(x)))
 
+		# update thetas, cuz we want to minimize the cost function
 		theta0 -= tempTheta0
 		theta1 -= tempTheta1
   
