@@ -9,13 +9,9 @@ WORKDIR /Python-3.10.0
 
 RUN ./configure --enable-optimizations && make -j 2 && make altinstall
 
-# req for Moudule 0
-RUN pip3.10 install tqdm flake8 && alias norminette=flake8 
-
-# req for Module 1
 RUN apt install -y python3-gi python3-gi-cairo gir1.2-gtk-3.0 libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev 
 
-RUN pip3.10 install matplotlib pycairo PyGObject numpy scikit-learn pandas
+RUN pip3.10 install matplotlib==3.1.0 pycairo==1.17.1 PyGObject numpy pillow==10.0.0 pandas
 
 COPY ./src /src
 

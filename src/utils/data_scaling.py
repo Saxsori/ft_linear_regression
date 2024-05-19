@@ -1,4 +1,4 @@
-
+# normalize is when you scale the data to be between 0 and 1, which helps the model to converge faster, makes the model more accurate
 def normalize_xy(x, y):
 	x = (x - x.min()) / (x.max() - x.min())
 	y = (y - y.min()) / (y.max() - y.min())

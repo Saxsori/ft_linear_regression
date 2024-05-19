@@ -2,18 +2,27 @@ from decimal import Decimal
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from manage_theta import save_thetas
-from data_scaling import normalize_xy
+from utils.manage_theta import save_thetas
+from utils.data_scaling import normalize_xy
 
 def main () :
-	data = pd.read_csv("data.csv")
- 
-	x, y = normalize_xy(data['km'], data['price'])
+    
+	try:
+		data = pd.read_csv("data.csv")
+	except FileNotFoundError:
+		print("Please Add data.csv file to the same directory as this program -_-.")
+		return
+
+	try :
+		x, y = normalize_xy(data['km'], data['price'])
+	except KeyError :
+		print("Please make sure the csv file has the correct column names.")
+		return
  
 	x = np.array([Decimal(i) for i in x])
 	y = np.array([Decimal(i) for i in y])
 
- 
+	
 	stopping_threshold = Decimal('1e-15')
 	theta1 = Decimal('0.0')
 	theta0 = Decimal('0.0')
@@ -34,20 +43,15 @@ def main () :
   
 		cur_mse = sum((estm - y) ** 2) / Decimal(len(x))
   
+		# mse is the mean squared error, which is the average of the squared errors
+		# this is the cost function, and we want to minimize it, 
+  		# cuz the smaller it is, the better the model, the better the predictions
 		if per_mse is not None and abs(per_mse - cur_mse) <= stopping_threshold:
-			# print(f"{i} Converged", i)
-			# print("MSE change: ", per_mse - cur_mse)
 			print("theta0: ", theta0)
 			print("theta1: ", theta1)
 			break
 
 		per_mse = cur_mse
-
-		# print(f"Iteration {i}")
-		# print("MSE change: ", per_mse - cur_mse)
-		# print("Theta0: ", theta0)
-		# print("Theta1: ", theta1)
-		# print("---------------------------------")
   
 	save_thetas(theta0, theta1)
 	
