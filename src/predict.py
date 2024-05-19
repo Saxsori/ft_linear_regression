@@ -24,7 +24,6 @@ def plot_line (theta0: float, theta1: float):
     
         
     x_values, y_values = denormalize_xy(x_values, y_values, x, y)
-    print("here")
     
     x_data, y_data = denormalize_xy(x_data, y_data, x, y)
 
