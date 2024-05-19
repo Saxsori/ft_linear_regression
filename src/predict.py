@@ -1,9 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib as mpl
-mpl.use("GTK3Agg") # or mpl.use("GTK3Cairo")
-mpl.get_backend()
-import matplotlib.pyplot as plt # --> this will throw the error 'Namespace Gtk not available'
+import matplotlib.pyplot as plt 
 from utils.manage_theta import extract_thetas
 from utils.data_scaling import normalize_xy, normalize_value, denormalize_value, denormalize_xy
 
@@ -26,10 +24,13 @@ def plot_line (theta0: float, theta1: float):
     x_values, y_values = denormalize_xy(x_values, y_values, x, y)
     
     x_data, y_data = denormalize_xy(x_data, y_data, x, y)
-
-    plt.scatter(x_data, y_data, color='blue', label='Data points')
-    plt.plot(x_values, y_values, color='red', label='Regression line')
-    plt.show()
+	
+	plt.xlabel("Mileage (km)")
+	plt.ylabel("Price (AED)")
+	plt.title("Mileage of the car VS. The Price")
+	plt.scatter(x_data, y_data, color='blue', label='Data points')
+	plt.plot(x_values, y_values, color='red', label='Regression line')
+	plt.show()
 
 
 
