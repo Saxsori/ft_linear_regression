@@ -24,13 +24,13 @@ def plot_line (theta0: float, theta1: float):
     x_values, y_values = denormalize_xy(x_values, y_values, x, y)
     
     x_data, y_data = denormalize_xy(x_data, y_data, x, y)
-	
-	plt.xlabel("Mileage (km)")
-	plt.ylabel("Price (AED)")
-	plt.title("Mileage of the car VS. The Price")
-	plt.scatter(x_data, y_data, color='blue', label='Data points')
-	plt.plot(x_values, y_values, color='red', label='Regression line')
-	plt.show()
+    
+    plt.xlabel("Mileage (km)")
+    plt.ylabel("Price (AED)")
+    plt.title("Mileage of the car VS. The Price")
+    plt.scatter(x_data, y_data, color='blue', label='Data points')
+    plt.plot(x_values, y_values, color='red', label='Regression line')
+    plt.show()
 
 
 
