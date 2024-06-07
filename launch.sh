@@ -1,20 +1,33 @@
 #!/bin/bash
 
-
-export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
-xhost +$IP
-
-image_name="ft_linear_regression"
-
-container_name="ft_linear_regression"
-
-if ! docker image ls | grep "$image_name"; then
-	docker build -t "$image_name" .
+if [ -z "$1" ]; then
+	echo "Usage: $0 {setup|train|precise|predict}"
+  exit 1
 fi
 
-if ! docker container ls -a | grep "$container_name" ; then
-	docker run -d -it --rm -e DISPLAY="${IP}:0.0" --name "$container_name" -v ./src:/src "$image_name"
-fi
+case $1 in
+	setup)
+    	echo "Install Python Packages..."
+		pip install --upgrade pip
+		pip install matplotlib numpy pillow pandas    	
+    	;;
+	train)
+    	echo "Training Started..."
+		(cd src && python train.py)
+    	;;
+	predict)
+		echo "Predict Price..."
+		(cd src && python predict.py)
+		;;
+	precise)
+		echo "Calculate the precision of my Algorithm..."
+		(cd src && python precision.py)
+		;;
+	*)
+		echo "Invalid option: $1"
+		echo "Usage: $0 {setup|train|precise|predict}"
+		exit 1
+    	;;
+esac
 
-docker exec -it "$container_name" /bin/bash
-
+exit 0
