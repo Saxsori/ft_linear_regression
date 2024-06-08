@@ -36,18 +36,22 @@ def main () :
 		estm = theta0 + (theta1 * x)
 		
 		# learning rate is the step size, the bigger it is, determines the step size at each iteration while moving towards a minimum of the loss function
+		# the smaller it is, the more accurate the model, but the slower the convergence, which will cause more iterations
+		# the bigger it is, the faster the convergence, but the less accurate the model, and might overshoot the minimum
 		tempTheta0 = learning_rate * (sum(estm - y) / Decimal(len(x)))
 		tempTheta1 = learning_rate * (sum((estm - y) * x) / Decimal(len(x)))
 
 		# update thetas, cuz we want to minimize the cost function
+		# update thetas by subtracting the partial derivative of the cost function with respect to each theta
 		theta0 -= tempTheta0
 		theta1 -= tempTheta1
   
+		# calculate the mean squared error, which is the average of the squared errors, this should be minimized
 		cur_mse = sum((estm - y) ** 2) / Decimal(len(x))
   
-		# mse is the mean squared error, which is the average of the squared errors
-		# this is the cost function, and we want to minimize it, 
-  		# cuz the smaller it is, the better the model, the better the predictions
+		# the difference between the current mse and previous mse used to determine if the model has converged
+		# if the difference is less than the stopping threshold, this means any further iterations will cause the model to overshoot the minimum or overfit
+		# overfitting is when the model fits the training data too well, but fails to generalize to new data
 		if per_mse is not None and abs(per_mse - cur_mse) <= stopping_threshold:
 			print("theta0: ", theta0)
 			print("theta1: ", theta1)
