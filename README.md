@@ -11,7 +11,8 @@ Linear regression is an algorithm that provides a linear relationship between an
 The goal is to find the formula (or equation) of a line to predict the value of the output (dependent/outcome) variable based on the input (independent/predictor) variable with maximum accuracy or minimum error.
 
 
-![image](https://github.com/Saxsori/ft_linear_regression/assets/92129820/99d1f2b7-459c-4c17-9775-0390c292aa30)
+![image](https://github.com/Saxsori/ft_linear_regression/assets/92129820/0188ce10-9c24-4e3e-9b2e-306e136ff62c)
+
 
 ```
 In the above figure,
