@@ -54,19 +54,33 @@ Gradient descent is one of the most famous techniques in machine learning and us
 
 An iterative optimization algorithm that tries to find the optimum value (Minimum/Maximum) of an objective function. It is one of the most used optimization techniques in machine learning projects for updating the parameters of a model in order to minimize a cost function. 
 
-![image](https://github.com/Saxsori/ft_linear_regression/assets/92129820/d7115b7b-d3ec-430e-bcf3-d3f22770d076)
+```math
+\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+```
+
+Where,
+```
+\hat{y}^{(i)} = \theta_0 + \theta_1x_1^{(i)} 
+```
+
 
 The main aim of gradient descent is to find the best parameters of a model that give the highest accuracy on training. By parameters, we mean the coefficients or weights (𝜃0,𝜃1) in the linear regression model that determine the strength and direction of the relationship between the independent variables (features) and the dependent variable (target).
 
-![image](https://github.com/Saxsori/ft_linear_regression/assets/92129820/14f210fb-39a0-404b-b3d0-e0b696eea7ba)
 
+``` math
+\theta_0 = \theta_0 - \alpha \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})
 ```
+
+```math
+\theta_1 := \theta_1 - \alpha \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)}) x_1^{(i)}
+```
+
+
 Where,
 
+``` 
 a: learning rate
 m: total data
-
-the parameters
 𝜃0: bias, y-intercept
 𝜃1: Weight, slope
 ```
@@ -94,9 +108,18 @@ Start with initial values for the parameters, can be set to zeros.
 ​\frac{\partial}{\partial \theta_1} = \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)}) x_1^{(i)}
 ```
 
+where, 
+
+```math
+\hat{y}^{(i)} = \theta_0 + \theta_1x_1^{(i)} 
+```
+
+
+
 ```python
-tempTheta0 = (sum((theta0 + (theta1 * x)) - y) / Decimal(len(x)))
-tempTheta1 = (sum(((theta0 + (theta1 * x)) - y) * x) / Decimal(len(x)))
+pred = theta0 + (theta1 * x)
+tempTheta0 = (sum(pred) - y) / Decimal(len(x)))
+tempTheta1 = (sum(pred) - y) * x) / Decimal(len(x)))
 ```
 
 
