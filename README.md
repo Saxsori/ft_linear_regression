@@ -25,16 +25,17 @@ Line of regression: Best fit line for a model
 Line is plotted for the given data points that suitably fit all the issues. Hence, it is called the ‘best fit line.’ The goal of the linear regression algorithm is to find this best fit line seen in the above figure.
 
 
-Suppose the equation of the best-fitted line is given by Y = aX + b 
+Suppose the equation of the best-fitted line is given by 
 
 ```
 y = ax + b
 
 Where,
 
-Y: dependent variable
-m: slope or regression coefficient
-c: y-intercept
+y: dependent variable
+x: independent variable
+a: slope or regression coefficient
+b: y-intercept
 ```
 then, the regression coefficients formula is given as follows:
 
@@ -85,11 +86,39 @@ Start with initial values for the parameters, can be set to zeros.
 
 
 
+``` math
+\frac{\partial}{\partial \theta_0} = \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})
+```
+
+```math
+​\frac{\partial}{\partial \theta_1} = \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)}) x_1^{(i)}
+```
+
+```python
+tempTheta0 = (sum(estm - y) / Decimal(len(x)))
+tempTheta1 = (sum((estm - y) * x) / Decimal(len(x)))
+```
+
+
 4. Update Parameters
+``` math
+\theta_0:= \theta_0 - \alpha \frac{\partial}{\partial \theta_0} 
+```
 
-5. Calculate Cost Function
+```math
+​\theta_1:= \theta_1 - \alpha \frac{\partial}{\partial \theta_1}
+```
 
-6. Repeat
+```python
+theta0 -= learning_rate * tempTheta0
+theta1 -= learning_rate * tempTheta1
+```
+
+
+6. Calculate Cost Function
+
+
+8. Repeat
 
 
 
