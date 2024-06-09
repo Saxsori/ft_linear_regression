@@ -95,8 +95,8 @@ Start with initial values for the parameters, can be set to zeros.
 ```
 
 ```python
-tempTheta0 = (sum(estm - y) / Decimal(len(x)))
-tempTheta1 = (sum((estm - y) * x) / Decimal(len(x)))
+tempTheta0 = (sum((theta0 + (theta1 * x)) - y) / Decimal(len(x)))
+tempTheta1 = (sum(((theta0 + (theta1 * x)) - y) * x) / Decimal(len(x)))
 ```
 
 
@@ -117,8 +117,41 @@ theta1 -= learning_rate * tempTheta1
 
 6. Calculate Cost Function
 
+```math
+\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+```
+
+
+```python
+mse = sum(((theta0 + (theta1 * x)) - y) ** 2) / Decimal(len(x))
+```
+
 
 8. Repeat
+- Repeat steps 2-5 for a number of iterations of your choice, or infinitely until the parameters converge or reach a predefined stopping threshold.
+- Convergence means that the parameters are no longer changing significantly with further iterations, indicating that the algorithm has found the minimum of the cost function.
+
+
+## OverFitting
+Overfitting occurs when a model learns the training data too well, resulting in poor performance on new, unseen data. Overfitting is not acceptable because it compromises the model’s ability to generalize from the training data to other data.
+
+
+In this implementation, the stopping threshold and learning rate are used to avoid overfitting:
+
+- Stopping Threshold: By defining a threshold for minimal changes in the cost function or parameter values, we can prevent the model from continuing to learn the noise in the training data, which helps avoid overfitting.
+- Learning Rate (α): A carefully chosen learning rate ensures that the model learns efficiently without making too large updates to the parameters, which can cause overfitting or divergence.
+
+
+## Customizing Parameters
+The learning rate 𝛼, number of iterations, and stopping threshold can be defined by the developer. These hyperparameters may vary from model to model based on the specific requirements and nature of the data.
+
+- Learning Rate (𝛼): Controls the size of the steps taken to reach the minimum of the cost function.
+- Number of Iterations: Defines how many times the gradient descent steps are repeated.
+- Stopping Threshold: Determines when to stop the iterations based on minimal change in the cost function or parameter values.
+
+These settings can be adjusted to optimize the model’s performance and ensure it converges appropriately without overfitting.
+
+
 
 
 
