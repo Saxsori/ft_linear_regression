@@ -187,17 +187,39 @@ R^2 = 1 - \frac{RSS}{TSS}
 
 
 - TSS (Total Sum of Squares) measures the total variance in the target variable:
-
-where:
-
+  
 ```math
   TSS = \sum (y_i - \bar{y})^2
 ```
 
-Here, $`y_i`$ is the actual value and $`\bar{y}`$ is the mean of the actual values.
+   Here, $`y_i`$ is the actual value and $`\bar{y}`$ is the mean of the actual values.
 
 
 
+- RSS (Residual Sum of Squares) measures the variance that the model fails to explain:
+
+```math
+  RSS = \sum (y_i - \hat{y}_i)^2
+```
+
+   Here, $`\hat{y}_i`$ is the predicted value.
+
+
+Using the Python code, the $`R^2`$ calculation looks like this:
+
+```python
+y_mean = np.mean(y)
+
+y_pred = theta0 + (theta1 * x_data)
+
+tss = np.sum((y - y_mean) ** 2)
+
+rss = np.sum((y_pred - y) ** 2)
+
+r_squared = 1 - (rss / tss)
+```
+
+The $`R^2`$ score provides a measure of how well the model's predictions match the actual data, with a value closer to 1 indicating a better fit.
 
 
 
