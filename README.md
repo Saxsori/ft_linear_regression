@@ -176,6 +176,25 @@ The learning rate 𝛼, number of iterations, and stopping threshold can be defi
 These settings can be adjusted to optimize the model’s performance and ensure it converges appropriately without overfitting.
 
 
+# Bonus
+
+## Precision
+To evaluate the precision of the linear regression model, we use the $`R^2`$ score, which is calculated as follows:
+
+```math
+R^2 = 1 - \frac{RSS}{TSS}
+```
+
+
+- TSS (Total Sum of Squares) measures the total variance in the target variable:
+
+where:
+
+```math
+  TSS = \sum (y_i - \bar{y})^2
+```
+
+Here, $`y_i`$ is the actual value and $`\bar{y}`$ is the mean of the actual values.
 
 
 
