@@ -175,6 +175,37 @@ The learning rate 𝛼, number of iterations, and stopping threshold can be defi
 
 These settings can be adjusted to optimize the model’s performance and ensure it converges appropriately without overfitting.
 
+## Normalization
+Before starting the gradient descent algorithm, data needs to be normalized. Normalization scales the features of your data to a specific range, often [0, 1] or [-1, 1], to ensure they have a consistent scale.
+
+#### Normalization Equation
+
+For min-max normalization:
+
+```math
+x_{\text{norm}} = \frac{x - \min(x)}{\max(x) - \min(x)} 
+```
+
+#### Benefits for Gradient Descent
+
+1. **Faster Convergence**: Normalized features lead to more efficient gradient descent steps, reducing the number of iterations needed.
+2. **Numerical Stability**: Prevents overflow/underflow issues by keeping feature values within a manageable range.
+3. **Equal Influence**: Ensures all features contribute equally to the gradient updates.
+
+```python
+def normalize(x):
+	x = (x - x.min()) / (x.max() - x.min())
+   return x
+```
+
+#### Denormalization for Accuracy
+To avoid errors and increase accuracy, it is better to denormalize the data at the end of the algorithm. After getting the predictions using normalized parameters, denormalize the predicted values to get more accurate values in their original scale. This helps to maintain the integrity of the data and provides more meaningful predictions.
+
+```python
+def denormalize(x, original_x):
+    x = x * (max(original_x) - min(original_x)) + min(original_x)
+    return x
+```
 
 # Bonus
 
