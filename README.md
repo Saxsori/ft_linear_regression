@@ -207,7 +207,6 @@ def denormalize(x, original_x):
     return x
 ```
 
-# Bonus
 
 ## Precision
 To evaluate the precision of the linear regression model, we use the $`R^2`$ score, which is calculated as follows:
