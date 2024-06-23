@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 from utils.manage_theta import extract_thetas
 from utils.data_scaling import normalize_xy, denormalize_xy
 
+# This function calculates the R-squared value of the model, which is a measure of how well the model fits the data.
+# The R-squared value is a number between 0 and 1, where 1 indicates a perfect fit and 0 indicates no fit.
 def calculate_r_squared (theta0, theta1):
 
 	try:

@@ -4,7 +4,7 @@ image_name="ft_linear_regression"
 container_name="ft_linear_regression"
 
 if [ -z "$1" ]; then
-    echo "Usage: $0 {setup|train|precise|predict}"
+    echo "Usage: $0 {setup|train|precise|predict|clean}"
     exit 1
 fi
 
@@ -41,20 +41,28 @@ case $1 in
         ;;
 
     train)
+	    echo "Training Started..."
         docker exec -it "$container_name" python3.10 /src/train.py
         ;;
 
-    precise)
-        docker exec -it "$container_name" python3.10 /src/precise.py
-        ;;
-
     predict)
+		echo "Predict Price..."
         docker exec -it "$container_name" python3.10 /src/predict.py
         ;;
+	
+    precise)
+		echo "Calculate the precision of my Algorithm..."
+        docker exec -it "$container_name" python3.10 /src/precision.py
+        ;;
 
+	clean)
+		echo "Cleaning up the environment..."
+		docker stop "$container_name"
+		docker rmi "$image_name"
+		;;
     *)
         echo "Invalid option: $1"
-        echo "Usage: $0 {setup|train|precise|predict}"
+        echo "Usage: $0 {setup|train|precise|predict|clean}"
         exit 1
         ;;
 esac
