@@ -41,8 +41,11 @@ then, the regression coefficients formula is given as follows:
 
 ![image](https://github.com/Saxsori/ft_linear_regression/assets/92129820/941bf7be-1536-4e0c-96f5-f5360016e86c) 
 
-here, n refers to the number of data points in the given data sets.
+```
+here,
 
+n refers to the number of data points in the given data sets.
+```
 
 # Gradient Descent
 
