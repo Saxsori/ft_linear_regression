@@ -17,7 +17,7 @@ The goal is to find the formula (or equation) of a line to predict the value of 
 ```
 In the above figure,
 
-X-axis:Independent variable
+X-axis: Independent variable
 Y-axis: Output / dependent variable
 Line of regression: Best fit line for a model
 ```
@@ -67,7 +67,7 @@ Where,
 ```
 
 
-The main aim of gradient descent is to find the best parameters of a model that give the highest accuracy on training. By parameters, we mean the coefficients or weights (𝜃0,𝜃1) in the linear regression model that determine the strength and direction of the relationship between the independent variables (features) and the dependent variable (target).
+The main aim of gradient descent is to find the best parameters of a model that give the highest accuracy on training. By parameters, we mean the coefficients or weights $`(\theta_0, \theta_0)`$ in the linear regression model that determines the strength and direction of the relationship between the independent variables (features) and the dependent variable (target).
 
 
 ``` math
@@ -94,7 +94,7 @@ m: total data
 
 1. Initialize Parameters
    
-Start with initial values for the parameters, can be set to zeros.
+Start with initial values for the parameters, which can be set to zeros.
 
 ```
 𝜃0 = 0
