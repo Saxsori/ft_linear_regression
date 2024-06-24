@@ -251,6 +251,64 @@ r_squared = 1 - (rss / tss)
 
 The $`R^2`$ score provides a measure of how well the model's predictions match the actual data, with a value closer to 1 indicating a better fit.
 
+# Launching the Project
 
+To isolate the packages installed from your local system and to maintain package consistency in each launch, I implemented two approaches: Docker with X11 forwarding and a Python virtual environment (venv). Both methods ensure that you can display graphical outputs from Python applications without any issues, including those displayed via MobaXterm.
+
+- Docker and X11 Forwarding approach can be found in the main branch.
+- Python Virtual Environment approach can be found in the submit_version branch.
+
+## Approach 1: Docker with X11 Forwarding (Main Branch)
+What is X11 Forwarding?
+X11 forwarding allows you to run applications with a graphical user interface (GUI) on a remote machine while displaying the GUI on your local machine. This is useful for running applications in a Docker container and viewing the GUI on your host system.
+
+### How to Launch
+
+1. X11 Server: Ensure you have an X11 server running on your host system. You can use:
+   a. macOS: XQuartz
+   b. Windows: MobaXterm
+   c. Linux: An X11 server is usually pre-installed.
+2. Run the Script
+```bash
+sh launch.sh setup
+```
+3. When prompted
+- Confirm that your X11 server is ready.
+- Specify whether your X11 server is launched locally or remotely.
+	- For local: The script will automatically set the IP address of your host.
+	- For remote: Enter the IP address of the host running the X11 server when prompted.
+This setup ensures that the GUI from the Docker container will be forwarded to your host system's X11 server.
+
+## Approach 2: Using Python Virtual Environment (venv) (Submit_Version Branch)
+What is venv?
+venv is a tool in Python that creates an isolated environment for your Python projects. This means that all dependencies and packages are installed in an isolated directory, avoiding conflicts with other projects and system-wide packages
+
+### How to Launch
+1. Run the Script
+```bash
+sh launch.sh setup
+```
+This command will:
+- Create a virtual environment in the venv directory (if it doesn't already exist).
+- Activate the virtual environment.
+- Install the necessary Python packages (matplotlib, numpy, pillow, and pandas).
+
+## Run Project Commands
+- To Train the Model
+```bash
+sh launch.sh train
+```
+- To Predict Prices
+```bash
+sh launch.sh predict
+```
+- To Calculate Precision
+```bash
+sh launch.sh precise
+```
+- To Clean the Environment (if needed)
+```bash
+sh launch.sh clean
+```
 
 
