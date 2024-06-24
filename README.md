@@ -292,8 +292,11 @@ This setup ensures that the GUI from the Docker container will be forwarded to y
 
 
 
+https://github.com/Saxsori/ft_linear_regression/assets/92129820/eda08ec8-e7c1-4682-bc68-dee5e03f84dc
 
-https://github.com/Saxsori/ft_linear_regression/assets/92129820/c7c7989c-f515-4f3e-8819-61deba02b667
+
+
+
 
 
 
