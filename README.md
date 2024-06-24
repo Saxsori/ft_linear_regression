@@ -336,7 +336,10 @@ This command will:
 
 
 
-https://github.com/Saxsori/ft_linear_regression/assets/92129820/6b1b925e-dc18-4046-95d1-5159513ff3fd
+https://github.com/Saxsori/ft_linear_regression/assets/92129820/d2fbda3d-34cc-454b-b9fc-902d0b786eef
+
+
+
 
 
 
