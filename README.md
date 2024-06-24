@@ -59,8 +59,8 @@ An iterative optimization algorithm that tries to find the optimum value (Minimu
 ```
 
 Where,
-```
-\hat{y}^{(i)} = \theta_0 + \theta_1x_1^{(i)} 
+```math
+\hat{y}_i = \theta_0 + \theta_1x_i 
 ```
 
 
@@ -68,11 +68,11 @@ The main aim of gradient descent is to find the best parameters of a model that 
 
 
 ``` math
-\theta_0 = \theta_0 - \alpha \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})
+\theta_0 = \theta_0 - \alpha \frac{1}{m} \sum_{i=1}^{m} (\hat{y_i} - y_i)
 ```
 
 ```math
-\theta_1 := \theta_1 - \alpha \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)}) x_1^{(i)}
+\theta_1 := \theta_1 - \alpha \frac{1}{m} \sum_{i=1}^{m} (\hat{y_i} - y_i x_i)
 ```
 
 
@@ -101,17 +101,17 @@ Start with initial values for the parameters, can be set to zeros.
 
 
 ``` math
-\frac{\partial}{\partial \theta_0} = \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})
+\frac{\partial}{\partial \theta_0} = \frac{1}{m} \sum_{i=1}^{m} (\hat{y_i} - y_i)
 ```
 
 ```math
-​\frac{\partial}{\partial \theta_1} = \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)}) x_1^{(i)}
+​\frac{\partial}{\partial \theta_1} = \frac{1}{m} \sum_{i=1}^{m} (\hat{y_i} - y_i x_i)
 ```
 
 where, 
 
 ```math
-\hat{y}^{(i)} = \theta_0 + \theta_1x_1^{(i)} 
+\hat{y}^{(i)} = \theta_0 + \theta_1x_i
 ```
 
 
