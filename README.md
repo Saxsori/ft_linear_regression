@@ -263,7 +263,8 @@ To isolate the packages installed from your local system and to maintain package
 - Python Virtual Environment approach can be found in the submit_version branch.
 
 ## Approach 1: Docker with X11 Forwarding (Main Branch)
-What is X11 Forwarding?
+**What is X11 Forwarding?**
+
 X11 forwarding allows you to run applications with a graphical user interface (GUI) on a remote machine while displaying the GUI on your local machine. This is useful for running applications in a Docker container and viewing the GUI on your host system.
 
 ### How to Launch
@@ -284,7 +285,8 @@ sh launch.sh setup
 This setup ensures that the GUI from the Docker container will be forwarded to your host system's X11 server.
 
 ## Approach 2: Using Python Virtual Environment (venv) (Submit_Version Branch)
-What is venv?
+**What is venv?**
+
 venv is a tool in Python that creates an isolated environment for your Python projects. This means that all dependencies and packages are installed in an isolated directory, avoiding conflicts with other projects and system-wide packages
 
 ### How to Launch
