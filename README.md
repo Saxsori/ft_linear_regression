@@ -220,7 +220,7 @@ R^2 = 1 - \frac{RSS}{TSS}
 ```
 
 
-- TSS (Total Sum of Squares) measures the total variance in the target variable:
+- $`TSS`$ (Total Sum of Squares) measures the total variance in the target variable:
   
 ```math
   TSS = \sum (y_i - \bar{y})^2
@@ -230,7 +230,7 @@ R^2 = 1 - \frac{RSS}{TSS}
 
 
 
-- RSS (Residual Sum of Squares) measures the variance that the model fails to explain:
+- $`RSS`$ (Residual Sum of Squares) measures the variance that the model fails to explain:
 
 ```math
   RSS = \sum (y_i - \hat{y}_i)^2
