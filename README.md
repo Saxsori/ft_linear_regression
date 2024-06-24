@@ -270,18 +270,23 @@ X11 forwarding allows you to run applications with a graphical user interface (G
 ### How to Launch
 
 1. X11 Server: Ensure you have an X11 server running on your host system. You can use:
-   a. macOS: XQuartz
-   b. Windows: MobaXterm
-   c. Linux: An X11 server is usually pre-installed.
+	- macOS: XQuartz
+ 	- Windows: MobaXterm
+ 	- Linux: An X11 server is usually pre-installed.
+
+   
 2. Run the Script
 ```bash
 sh launch.sh setup
 ```
+
+
 3. When prompted
-- Confirm that your X11 server is ready.
-- Specify whether your X11 server is launched locally or remotely.
-	- For local: The script will automatically set the IP address of your host.
-	- For remote: Enter the IP address of the host running the X11 server when prompted.
+	- Confirm that your X11 server is ready.
+	- Specify whether your X11 server is launched locally or remotely.
+		- For local: The script will automatically set the IP address of your host.
+		- For remote: Enter the IP address of the host running the X11 server when prompted.
+
 This setup ensures that the GUI from the Docker container will be forwarded to your host system's X11 server.
 
 ## Approach 2: Using Python Virtual Environment (venv) (Submit_Version Branch)
