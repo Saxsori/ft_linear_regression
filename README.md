@@ -297,25 +297,7 @@ https://github.com/Saxsori/ft_linear_regression/assets/92129820/c7c7989c-f515-4f
 
 
 
-
-
-
-## Approach 2: Using Python Virtual Environment (venv) (Submit_Version Branch)
-**What is venv?**
-
-venv is a tool in Python that creates an isolated environment for your Python projects. This means that all dependencies and packages are installed in an isolated directory, avoiding conflicts with other projects and system-wide packages
-
-### How to Launch
-1. Run the Script
-```bash
-sh launch.sh setup
-```
-This command will:
-- Create a virtual environment in the venv directory (if it doesn't already exist).
-- Activate the virtual environment.
-- Install the necessary Python packages (matplotlib, numpy, pillow, and pandas).
-
-## Run Project Commands
+### Run Project Commands
 - To Train the Model
 ```bash
 sh launch.sh train
@@ -331,6 +313,49 @@ sh launch.sh precise
 - To Clean the Environment (if needed)
 ```bash
 sh launch.sh clean
+```
+
+
+
+
+## Approach 2: Using Python Virtual Environment (venv) (Submit_Version Branch)
+**What is venv?**
+
+venv is a tool in Python that creates an isolated environment for your Python projects. This means that all dependencies and packages are installed in an isolated directory, avoiding conflicts with other projects and system-wide packages
+
+### How to Launch
+1. Run the Script
+```bash
+source ./launch.sh setup
+source ./launch.sh install
+```
+This command will:
+- Create a virtual environment in the venv directory (if it doesn't already exist).
+- Activate the virtual environment.
+- Install the necessary Python packages (matplotlib, numpy, pillow, and pandas).
+
+
+
+https://github.com/Saxsori/ft_linear_regression/assets/92129820/6b1b925e-dc18-4046-95d1-5159513ff3fd
+
+
+
+### Run Project Commands
+- To Train the Model
+```bash
+source ./launch.sh train
+```
+- To Predict Prices
+```bash
+source ./launch.sh predict
+```
+- To Calculate Precision
+```bash
+source ./launch.sh precise
+```
+- To Clean the Environment (if needed)
+```bash
+source ./launch.sh clean
 ```
 
 
