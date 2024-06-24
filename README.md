@@ -20,7 +20,6 @@ In the above figure,
 X-axis:Independent variable
 Y-axis: Output / dependent variable
 Line of regression: Best fit line for a model
-
 ```
 
 Line is plotted for the given data points that suitably fit all the issues. Hence, it is called the ‘best fit line.’ The goal of the linear regression algorithm is to find this best fit line seen in the above figure.
