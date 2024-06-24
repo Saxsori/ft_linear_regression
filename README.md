@@ -67,7 +67,7 @@ Where,
 ```
 
 
-The main aim of gradient descent is to find the best parameters of a model that give the highest accuracy on training. By parameters, we mean the coefficients or weights $`(\theta_0, \theta_0)`$ in the linear regression model that determines the strength and direction of the relationship between the independent variables (features) and the dependent variable (target).
+The main aim of gradient descent is to find the best parameters of a model that give the highest accuracy on training. By parameters, I mean the coefficients or weights $`(\theta_0, \theta_0)`$ in the linear regression model that determines the strength and direction of the relationship between the independent variables (features) and the dependent variable (target).
 
 
 ``` math
@@ -213,7 +213,7 @@ def denormalize(x, original_x):
 
 
 ## Precision
-To evaluate the precision of the linear regression model, we use the $`R^2`$ score, which is calculated as follows:
+To evaluate the precision of the linear regression model, I used the $`R^2`$ score, which is calculated as follows:
 
 ```math
 R^2 = 1 - \frac{RSS}{TSS}
