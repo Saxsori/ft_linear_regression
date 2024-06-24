@@ -79,9 +79,11 @@ The main aim of gradient descent is to find the best parameters of a model that 
 ```
 
 
+
+
+```
 Where,
 
-``` 
 a: learning rate
 m: total data
 𝜃0: bias, y-intercept
