@@ -289,6 +289,17 @@ sh launch.sh setup
 
 This setup ensures that the GUI from the Docker container will be forwarded to your host system's X11 server.
 
+
+
+
+
+https://github.com/Saxsori/ft_linear_regression/assets/92129820/c7c7989c-f515-4f3e-8819-61deba02b667
+
+
+
+
+
+
 ## Approach 2: Using Python Virtual Environment (venv) (Submit_Version Branch)
 **What is venv?**
 
